@@ -2,13 +2,10 @@ package a23227.smartcity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 
-class MainActivity : AppCompatActivity() {
+class Notas : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_notas)
     }
-
-    fun btnNotas(view: View) {}
 }
