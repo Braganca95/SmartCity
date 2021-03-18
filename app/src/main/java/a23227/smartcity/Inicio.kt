@@ -18,5 +18,10 @@ class Inicio : AppCompatActivity() {
         startActivity(intent)
     }
 
+    fun btnNotas(view: View) {
+        val intent = Intent(this, Notas::class.java)
+        startActivity(intent)
+    }
+
 
 }
