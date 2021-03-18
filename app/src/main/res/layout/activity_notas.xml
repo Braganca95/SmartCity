@@ -10,6 +10,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/recyclerNotas"
         tools:layout_editor_absoluteX="145dp"
         tools:layout_editor_absoluteY="68dp"
         tools:listitem="@layout/noteline"/>
