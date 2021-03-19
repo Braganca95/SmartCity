@@ -23,7 +23,7 @@
         android:hint="Titulo" />
 
     <TextView
-        android:id="@+id/textInfo"
+        android:id="@+id/textView10"
         android:layout_margin="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,16 +32,17 @@
         android:text="Info" />
 
     <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textInfo"
+        android:layout_below="@id/textView10"
         android:hint="Info" />
 
 
 
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnCriar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
