@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 
@@ -39,7 +40,9 @@ class CriarNota : AppCompatActivity() {
     }
 
     companion object {
-        const val EXTRA_REPLY_TITULO = "com.example.android.city"
-        const val EXTRA_REPLY_INFO = "com.example.android.country"
+        const val EXTRA_REPLY_TITULO = "Titulo"
+        const val EXTRA_REPLY_INFO = "Info"
     }
+
+
 }

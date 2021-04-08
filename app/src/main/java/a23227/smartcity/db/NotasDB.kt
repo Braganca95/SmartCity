@@ -26,16 +26,6 @@ public abstract class NotasDB : RoomDatabase() {
                 scope.launch {
                     var NotasDAO = database.NotasDAO()
 
-                    // Delete all content here.
-                    NotasDAO.deleteAll()
-
-                    // Add sample cities.
-                    var nota = Nota(0,"primeira", "info1", "Hoje")
-                    NotasDAO.insert(nota)
-                    nota = Nota(1,"segunda", "info2", "Hoje")
-                    NotasDAO.insert(nota)
-                    nota = Nota(2,"terceira", "info3","Hoje")
-                    NotasDAO.insert(nota)
 
                 }
             }

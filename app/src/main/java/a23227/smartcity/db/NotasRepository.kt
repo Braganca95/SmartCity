@@ -27,9 +27,9 @@ class NotasRepository(private val NotasDAO: NotasDAO) {
         NotasDAO.deleteAll()
     }
 
-    /*suspend fun deleteByNote(city: String) {
-        NotasDAO.deleteByCity(city)
-    }*/
+    suspend fun deleteByID(id: Int?) {
+        NotasDAO.deleteByID(id)
+    }
 
     suspend fun updateNota(nota: Nota) {
         NotasDAO.updateNota(nota)

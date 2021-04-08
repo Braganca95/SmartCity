@@ -10,6 +10,7 @@ import android.content.Intent
 import android.view.View
 import android.widget.Toast
 import androidx.core.view.size
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -41,10 +42,12 @@ class Notas : AppCompatActivity() {
         notasViewModel = ViewModelProvider(this).get(NotasViewModel::class.java)
         notasViewModel.allNotas.observe(this, Observer { notas ->
             // Update the cached copy of the words in the adapter.
-            notas?.let { adapter.setNotas(it) }
+            notas?.let {
+                adapter.setNotas(it)
+            }
         })
 
-        //Fab
+
 
 
     }
@@ -57,9 +60,9 @@ class Notas : AppCompatActivity() {
             val pinfo = data?.getStringExtra(CriarNota.EXTRA_REPLY_INFO)
 
             if (ptitulo!= null && pinfo != null) {
-                val sdf = SimpleDateFormat("dd/M/yyyy hh:mm")
+                val sdf = SimpleDateFormat("hh:mm dd/M/yyyy")
                 val date = sdf.format(Date())
-                val nota = Nota(recyclerNotas.size ,titulo = ptitulo, info = pinfo,data = date )
+                val nota = Nota(titulo = ptitulo, info = pinfo,data = date )
                 notasViewModel.insert(nota)
             }
 
@@ -72,10 +75,23 @@ class Notas : AppCompatActivity() {
     }
 
 
+    /*fun visualizarNota(view: View){
+
+        val intent = Intent(this@Notas, VisualizarNota::class.java).apply{}
+
+            android:onClick="visualizarNota"
+        startActivity(intent)
+
+    }*/
+
+
+
     fun CriarNota(view: View) {
         val intent = Intent(this@Notas, CriarNota::class.java)
         startActivityForResult(intent, newNoteRequestCode)
 
     }
+
+
 
 }

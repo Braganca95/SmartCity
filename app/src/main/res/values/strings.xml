@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SmartCity</string>
+    <string name="deleteNoteTitle">Delete Note</string>
+    <string name="deleteNoteMessage">Want to delete note?</string>
 </resources>

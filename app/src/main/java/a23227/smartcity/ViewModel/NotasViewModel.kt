@@ -38,10 +38,10 @@ class NotasViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     // delete by city
-    /*fun deleteByCity(city: String) = viewModelScope.launch(Dispatchers.IO) {
-        repository.deleteByCity(city)
+    fun deleteByID(id: Int?) = viewModelScope.launch(Dispatchers.IO) {
+        repository.deleteByID(id)
     }
-
+    /*
     fun getCitiesByCountry(country: String): LiveData<List<City>> {
         return repository.getCitiesByCountry(country)
     }
