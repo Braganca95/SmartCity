@@ -24,6 +24,7 @@
                 android:background="?attr/colorPrimary"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
+                app:layout_constraintTop_toTopOf="parent"
                 app:titleTextColor="@color/white" />
 
             <ImageView
@@ -32,11 +33,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
+                android:onClick="close"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:tint="@color/white"
-                app:srcCompat="@drawable/ic_back" />
+                app:srcCompat="@drawable/ic_back"
+                app:tint="@color/white" />
 
             <ImageView
                 android:id="@+id/imageView2"
@@ -45,7 +47,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp"
                 android:onClick="deleteNote"
-                android:tint="@color/white"
+                app:tint="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -70,7 +72,7 @@
         android:layout_marginBottom="10dp"
         android:text="Titulo" />
 
-    <TextView
+    <EditText
         android:id="@+id/tituloVisual"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -86,14 +88,22 @@
         android:layout_centerHorizontal="true"
         android:text="Info" />
 
-    <TextView
+    <EditText
         android:id="@+id/infoVisual"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textView10"
         android:hint="Info" />
 
-
+    <Button
+        android:id="@+id/btnEditar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:onClick="editarNota"
+        android:text="Edit" />
 
 
 </RelativeLayout>

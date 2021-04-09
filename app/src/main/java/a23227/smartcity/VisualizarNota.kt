@@ -1,5 +1,6 @@
 package a23227.smartcity
 
+import a23227.smartcity.Entities.Nota
 import a23227.smartcity.ViewModel.NotasViewModel
 import a23227.smartcity.adapters.NotaAdapter.Companion.ID
 import a23227.smartcity.adapters.NotaAdapter.Companion.INFO
@@ -12,10 +13,15 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import kotlinx.android.synthetic.main.activity_visualizar_nota.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class VisualizarNota : AppCompatActivity() {
 
     private lateinit var notasViewModel: NotasViewModel
+    private var titulo: String? = null
+    private var info: String? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,11 +30,12 @@ class VisualizarNota : AppCompatActivity() {
 
         notasViewModel = ViewModelProvider(this).get(NotasViewModel::class.java)
 
+        titulo = intent.getStringExtra(TITULO)
+        info = intent.getStringExtra(INFO)
 
-        val titulo = intent.getStringExtra(TITULO)
-        val info = intent.getStringExtra(INFO)
         val tituloTextView: TextView = findViewById(R.id.tituloVisual)
         tituloTextView.text = titulo
+
         val infoTextView: TextView = findViewById(R.id.infoVisual)
         infoTextView.text = info
     }
@@ -36,24 +43,73 @@ class VisualizarNota : AppCompatActivity() {
     fun deleteNote(view: View) {
         val id = intent.getIntExtra(ID,-1)
 
-        val deleteDialog = AlertDialog.Builder(this)
+        val dialog = AlertDialog.Builder(this)
         //set title for alert dialog
-        deleteDialog.setTitle(R.string.deleteNoteTitle)
+        dialog.setTitle(R.string.deleteNoteTitle)
         //set message for alert dialog
-        deleteDialog.setMessage(R.string.deleteNoteMessage)
+        dialog.setMessage(R.string.deleteNoteMessage)
 
-        val alertDialog: AlertDialog = deleteDialog.create()
+
         // Set other dialog properties
-        deleteDialog.setPositiveButton("Yes"){dialogInterface, which ->
+        dialog.setPositiveButton("Yes"){dialogInterface, which ->
             notasViewModel.deleteByID(id)
             Toast.makeText(applicationContext,"Apagada",Toast.LENGTH_LONG).show()
             finish()
         }
         //performing cancel action
-        deleteDialog.setNegativeButton("Cancel"){dialogInterface , which ->
+        dialog.setNegativeButton("Cancel"){dialogInterface , which ->
         }
+        val deleteDialog: AlertDialog = dialog.create()
         deleteDialog.setCancelable(false)
         deleteDialog.show()
+
+
+    }
+
+    fun close(view: View) {
+        finish()
+    }
+
+    fun editarNota(view: View) {
+        val id = intent.getIntExtra(ID,-1)
+
+        val dialog = AlertDialog.Builder(this)
+
+        dialog.setTitle(R.string.updateNoteTitle)
+
+        dialog.setMessage(R.string.updateNoteMessage)
+
+        dialog.setPositiveButton("Yes"){dialogInterface, which ->
+
+            if (tituloVisual.text.toString().isNullOrEmpty()|| infoVisual.text.toString().isNullOrEmpty() ) {
+
+                Toast.makeText(applicationContext,R.string.editProblem,Toast.LENGTH_LONG).show()
+
+            }else if( tituloVisual.text.toString() == titulo && infoVisual.text.toString() == info) {
+                finish()
+            } else{
+                val tituloVisual = tituloVisual.text.toString()
+                val infoVisual = infoVisual.text.toString()
+                val sdf = SimpleDateFormat("hh:mm dd/M/yyyy")
+                val date = sdf.format(Date())
+                val nota = Nota(id =id, titulo = tituloVisual, info = infoVisual, data = date)
+                notasViewModel.updateNota(nota)
+                finish()
+
+
+            }
+
+        }
+
+        //performing cancel action
+        dialog.setNegativeButton("Cancel"){dialogInterface , which ->
+        }
+        val deleteDialog: AlertDialog = dialog.create()
+        deleteDialog.setCancelable(false)
+        deleteDialog.show()
+
+
+
 
 
     }
