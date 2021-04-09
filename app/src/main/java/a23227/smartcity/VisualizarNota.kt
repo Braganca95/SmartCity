@@ -51,7 +51,6 @@ class VisualizarNota : AppCompatActivity() {
         }
         //performing cancel action
         deleteDialog.setNegativeButton("Cancel"){dialogInterface , which ->
-            Toast.makeText(applicationContext,"clicked cancel\n operation cancel",Toast.LENGTH_LONG).show()
         }
         deleteDialog.setCancelable(false)
         deleteDialog.show()
