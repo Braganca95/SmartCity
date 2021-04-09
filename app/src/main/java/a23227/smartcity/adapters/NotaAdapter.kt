@@ -19,7 +19,6 @@ class NotaAdapter internal constructor(
     context: Context
 ) : RecyclerView.Adapter<NotaAdapter.NotaViewHolder>()  {
 
-    //private var listener:OnItemClickListener? = null
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var notas = emptyList<Nota>() // Cached copy of cities
 
