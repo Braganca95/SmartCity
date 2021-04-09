@@ -5,4 +5,7 @@
     <string name="editProblem">Please, write information on the Text Fields</string>
     <string name="updateNoteTitle">Update Note</string>
     <string name="updateNoteMessage">Want to update note?</string>
+    <string name="cancelDialog">Cancel</string>
+    <string name="confirmDialog">Yes</string>
+
 </resources>

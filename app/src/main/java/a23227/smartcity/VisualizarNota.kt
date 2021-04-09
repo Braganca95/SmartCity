@@ -51,13 +51,13 @@ class VisualizarNota : AppCompatActivity() {
 
 
         // Set other dialog properties
-        dialog.setPositiveButton("Yes"){dialogInterface, which ->
+        dialog.setPositiveButton(R.string.confirmDialog){dialogInterface, which ->
             notasViewModel.deleteByID(id)
             Toast.makeText(applicationContext,"Apagada",Toast.LENGTH_LONG).show()
             finish()
         }
         //performing cancel action
-        dialog.setNegativeButton("Cancel"){dialogInterface , which ->
+        dialog.setNegativeButton(R.string.cancelDialog){dialogInterface , which ->
         }
         val deleteDialog: AlertDialog = dialog.create()
         deleteDialog.setCancelable(false)
@@ -79,7 +79,7 @@ class VisualizarNota : AppCompatActivity() {
 
         dialog.setMessage(R.string.updateNoteMessage)
 
-        dialog.setPositiveButton("Yes"){dialogInterface, which ->
+        dialog.setPositiveButton(R.string.confirmDialog){dialogInterface, which ->
 
             if (tituloVisual.text.toString().isNullOrEmpty()|| infoVisual.text.toString().isNullOrEmpty() ) {
 
@@ -102,7 +102,7 @@ class VisualizarNota : AppCompatActivity() {
         }
 
         //performing cancel action
-        dialog.setNegativeButton("Cancel"){dialogInterface , which ->
+        dialog.setNegativeButton(R.string.cancelDialog){dialogInterface , which ->
         }
         val deleteDialog: AlertDialog = dialog.create()
         deleteDialog.setCancelable(false)
