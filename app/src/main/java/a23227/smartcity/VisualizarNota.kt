@@ -86,6 +86,7 @@ class VisualizarNota : AppCompatActivity() {
                 Toast.makeText(applicationContext,R.string.editProblem,Toast.LENGTH_LONG).show()
 
             }else if( tituloVisual.text.toString() == titulo && infoVisual.text.toString() == info) {
+                Toast.makeText(applicationContext,R.string.editEqual,Toast.LENGTH_LONG).show()
                 finish()
             } else{
                 val tituloVisual = tituloVisual.text.toString()

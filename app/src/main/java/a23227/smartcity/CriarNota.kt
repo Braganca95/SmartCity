@@ -8,6 +8,8 @@ import android.text.TextUtils
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_visualizar_nota.*
 
 class CriarNota : AppCompatActivity() {
 
@@ -22,26 +24,42 @@ class CriarNota : AppCompatActivity() {
 
 
 
+
+
         tituloText = findViewById(R.id.tituloText)
         infoText = findViewById(R.id.textInfo)
 
-        val button = findViewById<Button>(R.id.btnCriar)
-        button.setOnClickListener {
-            val replyIntent = Intent()
-            if (TextUtils.isEmpty(tituloText.text) || TextUtils.isEmpty(infoText.text)) {
-                setResult(Activity.RESULT_CANCELED, replyIntent)
-            } else {
-                replyIntent.putExtra(EXTRA_REPLY_TITULO, tituloText.text.toString())
-                replyIntent.putExtra(EXTRA_REPLY_INFO, infoText.text.toString())
-                setResult(Activity.RESULT_OK, replyIntent)
+
+
+            val button = findViewById<Button>(R.id.btnCriar)
+            button.setOnClickListener {
+                val replyIntent = Intent()
+
+                if (TextUtils.isEmpty(tituloText.text) || TextUtils.isEmpty(infoText.text)) {
+                    setResult(Activity.RESULT_CANCELED, replyIntent)
+                    Toast.makeText(applicationContext,R.string.createProblem, Toast.LENGTH_LONG).show()
+                } else {
+                    replyIntent.putExtra(EXTRA_REPLY_TITULO, tituloText.text.toString())
+                    replyIntent.putExtra(EXTRA_REPLY_INFO, infoText.text.toString())
+                    setResult(Activity.RESULT_OK, replyIntent)
+                }
+                finish()
             }
-            finish()
-        }
+
+
+
+
+
+
     }
 
     companion object {
         const val EXTRA_REPLY_TITULO = "Titulo"
         const val EXTRA_REPLY_INFO = "Info"
+    }
+
+    fun close(view: View) {
+        finish()
     }
 
 

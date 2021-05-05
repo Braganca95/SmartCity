@@ -31,11 +31,11 @@ class NotasViewModel(application: Application) : AndroidViewModel(application) {
     fun insert(nota: Nota) = viewModelScope.launch(Dispatchers.IO) {
         repository.insert(nota)
     }
-
+    /*
     // delete all
     fun deleteAll() = viewModelScope.launch(Dispatchers.IO) {
         repository.deleteAll()
-    }
+    }*/
 
     // delete by city
     fun deleteByID(id: Int?) = viewModelScope.launch(Dispatchers.IO) {

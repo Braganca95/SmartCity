@@ -66,11 +66,6 @@ class Notas : AppCompatActivity() {
                 notasViewModel.insert(nota)
             }
 
-        } else {
-            Toast.makeText(
-                applicationContext,
-                "Deu erro, boom",
-                Toast.LENGTH_LONG).show()
         }
     }
 
@@ -92,6 +87,9 @@ class Notas : AppCompatActivity() {
 
     }
 
+    fun close(view: View) {
+        finish()
+    }
 
 
 }

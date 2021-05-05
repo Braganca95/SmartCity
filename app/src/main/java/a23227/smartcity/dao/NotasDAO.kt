@@ -7,7 +7,7 @@ import androidx.room.*
 @Dao
 interface NotasDAO{
 
-    @Query("Select * From notas Order By data")
+    @Query("Select * From notas Order By id")
     fun getNotas(): LiveData<List<Nota>>
 
     @Query("Select * From notas Where id =:id")
