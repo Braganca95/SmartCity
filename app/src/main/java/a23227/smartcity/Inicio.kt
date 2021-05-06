@@ -28,10 +28,11 @@ class Inicio : AppCompatActivity() {
 
         val sharedPref: SharedPreferences = getSharedPreferences(
             getString(R.string.preference_file_key), Context.MODE_PRIVATE)
-
-        val loginCheck = sharedPref.getBoolean(getString(R.string.RememberMe),false)
         val checkString = sharedPref.getString(R.string.username.toString(),"Sidonio")
         Log.d("IDIDID",checkString.toString())
+
+
+        val loginCheck = sharedPref.getBoolean(getString(R.string.RememberMe),false)
 
         if (loginCheck) {
             val intent = Intent(this, MainActivity::class.java)
@@ -68,13 +69,13 @@ class Inicio : AppCompatActivity() {
                             if(response.body()!!.status){
                                 with(sharedPref.edit()) {
                                     putString(R.string.username.toString(), username)
-                                    val id = response.body()!!.id
-                                    putInt(R.string.idUser.toString(),id)
+                                    putInt(R.string.idUser.toString(),response.body()!!.id)
                                     putBoolean(getString(R.string.RememberMe),checkBoxRememberMe.isChecked)
                                     commit()
                                 }
                                 Toast.makeText(this@Inicio, getString(R.string.LoginSuccess), Toast.LENGTH_LONG).show()
                                 val user = sharedPref.getString(R.string.username.toString(), "Ola")
+                                val id = sharedPref.getInt(R.string.username.toString(), 0)
                                 Log.d("IDIDID",username)
                                 Log.d("IDIDID222",user.toString())
 
