@@ -9,5 +9,10 @@
     <string name="confirmDialog">Yes</string>
     <string name="createProblem">Please, write information on the Text Fields</string>
     <string name="editEqual">Note info is the same as before</string>
-
+    <string name="preference_file_key">KEY</string>
+    <string name="username">username</string>
+    <string name="idUser">1</string>
+    <string name="RememberMe">Remember Me</string>
+    <string name="LoginSuccess">YesLoginNice</string>
+    <string name="LoginFailure">NOLogin</string>
 </resources>
