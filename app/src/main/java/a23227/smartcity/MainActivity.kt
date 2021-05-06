@@ -52,6 +52,11 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    fun LaunchMap(view: View){
+        val intent = Intent(this, MapsActivity::class.java)
+        startActivity(intent)
+    }
+
 
 
 

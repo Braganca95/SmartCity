@@ -37,6 +37,7 @@ class Inicio : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             Toast.makeText(this@Inicio, getString(R.string.LoginSuccess), Toast.LENGTH_LONG).show()
             startActivity(intent)
+            finish()
 
         }
 
