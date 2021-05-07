@@ -13,6 +13,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -28,6 +29,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
     private lateinit var reports: List<Report>
+    private lateinit var lastLocation: Location
+    private lateinit var fusedLocationClient: FusedLocationProviderClient
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,6 +48,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         val sharedPref: SharedPreferences = getSharedPreferences(
             getString(R.string.preference_file_key), Context.MODE_PRIVATE)
+
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
         val id = sharedPref.getInt(R.string.idUser.toString(), 0)
 
@@ -88,6 +93,36 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
 
 
+        setUp()
     }
 
+    fun setUp(){
+
+        if(ActivityCompat.checkSelfPermission(this,
+                android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this,
+                arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),
+                LOCATION_PERMISSION_REQUEST_CODE)
+
+            return
+        }else {
+            mMap.isMyLocationEnabled = true
+
+            fusedLocationClient.lastLocation.addOnSuccessListener(this) { location ->
+                if (location != null){
+                    lastLocation = location
+                    val currentLatLng = LatLng(location.latitude, location.longitude)
+                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng,12f))
+                }
+            }
+        }
+    }
+
+
+    companion object {
+        // add to implement last known location
+        private const val LOCATION_PERMISSION_REQUEST_CODE = 1
+        //added to implement location periodic updates
+        private const val REQUEST_CHECK_SETTINGS = 2
+    }
 }
