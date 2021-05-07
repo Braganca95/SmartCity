@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:text="Início"
+                android:text="@string/Beginning"
                 android:textColor="@color/white"
                 android:textSize="24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:hint="username"/>
+        android:hint="@string/UsernameLogin"/>
     <EditText
         android:id="@+id/passwordEditLogin"
         android:inputType="textPassword"
@@ -76,7 +76,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Remember me/Guardar Dados" />
+        android:text="@string/RememberMe" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -94,14 +94,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:onClick="btnLogin"
-            android:text="Login" />
+            android:text="@string/Login" />
 
-        <Button
-            android:id="@+id/btnRegister"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="Register"/>
 
         <Button
             android:id="@+id/button3"
@@ -109,7 +103,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:onClick="btnNotas"
-            android:text="Notas"/>
+            android:text="@string/TitleListNotes"/>
 
 
     </LinearLayout>

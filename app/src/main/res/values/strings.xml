@@ -9,11 +9,29 @@
     <string name="confirmDialog">Yes</string>
     <string name="createProblem">Please, write information on the Text Fields!</string>
     <string name="editEqual">Note info is the same as before</string>
-    <string name="preference_file_key">KEY</string>
-    <string name="username">username</string>
-    <string name="idUser">1</string>
+    <string name="preference_file_key" translatable="false">KEY</string>
+    <string name="username" translatable="false">username</string>
+    <string name="idUser" translatable="false">1</string>
     <string name="RememberMe">Remember Me</string>
-    <string name="LoginSuccess">YesLoginNice</string>
-    <string name="LoginFailure">NOLogin</string>
     <string name="title_activity_maps">Map</string>
+    <string name="LoginSuccess">Successful login</string>
+    <string name="LoginFailure">Login error</string>
+    <string name="TitleListNotes">Notes</string>
+    <string name="CreateNote">Create Note</string>
+    <string name="Title">Title</string>
+    <string name="Info">Info</string>
+    <string name="Create">Create</string>
+    <string name="Home">Home</string>
+    <string name="Beginning">Login</string>
+    <string name="UsernameLogin">username</string>
+    <string name="PwLogin">password</string>
+    <string name="Login">login</string>
+    <string name="Coordinates">Coordinates: </string>
+    <string name="Edit">Edit</string>
+    <string name="Date">Date</string>
+    <string name="NoteDelete">Deleted</string>
+    <string name="Image">Select Image</string>
+    <string name="Save">Save</string>
+    <string name="reportProblem">Please, write information on the Text Fields!</string>
+
 </resources>

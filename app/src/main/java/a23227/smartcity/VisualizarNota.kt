@@ -53,7 +53,7 @@ class VisualizarNota : AppCompatActivity() {
         // Set other dialog properties
         dialog.setPositiveButton(R.string.confirmDialog){dialogInterface, which ->
             notasViewModel.deleteByID(id)
-            Toast.makeText(applicationContext,"Apagada",Toast.LENGTH_LONG).show()
+            Toast.makeText(applicationContext,R.string.NoteDelete,Toast.LENGTH_LONG).show()
             finish()
         }
         //performing cancel action
