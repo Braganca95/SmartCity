@@ -75,7 +75,7 @@ class Inicio : AppCompatActivity() {
                                 }
                                 Toast.makeText(this@Inicio, getString(R.string.LoginSuccess), Toast.LENGTH_LONG).show()
                                 val user = sharedPref.getString(R.string.username.toString(), "Ola")
-                                val id = sharedPref.getInt(R.string.username.toString(), 0)
+                                val id = sharedPref.getInt(R.string.idUser.toString(), 0)
                                 Log.d("IDIDID",username)
                                 Log.d("IDIDID222",user.toString())
 
