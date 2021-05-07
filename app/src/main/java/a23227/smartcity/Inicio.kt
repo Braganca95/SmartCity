@@ -80,6 +80,7 @@ class Inicio : AppCompatActivity() {
                                 Log.d("IDIDID222",user.toString())
 
                                 startActivity(intent)
+                                finish()
                             }else{
                                 Toast.makeText(this@Inicio, getString(R.string.LoginFailure), Toast.LENGTH_LONG).show()
                             }
