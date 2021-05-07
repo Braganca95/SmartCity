@@ -6,6 +6,7 @@ import a23227.smartcity.api.ServiceBuilder
 import android.content.Context
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
+import android.location.Geocoder
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -79,9 +80,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         call.enqueue(object : Callback<List<Report>> {
             override fun onResponse(call: Call<List<Report>>, response: Response<List<Report>>) {
-                Log.d("IDIDID",response.toString())
                 if (response.isSuccessful){
-                    Toast.makeText(this@MapsActivity, "Vomva", Toast.LENGTH_SHORT).show()
 
                     reports = response.body()!!
                     for(report in reports){
@@ -136,6 +135,19 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         // interval specifies the rate at which your app will like to receive updates.
         locationRequest.interval = 10000
         locationRequest.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+    }
+
+    private fun getAddress(lat: Double, lng: Double): String {
+        val geocoder = Geocoder(this)
+        val list = geocoder.getFromLocation(lat, lng, 1)
+        return list[0].getAddressLine(0)
+    }
+
+    fun calculateDistance(lat1: Double, lng1: Double, lat2: Double, lng2: Double): Float {
+        val results = FloatArray(1)
+        Location.distanceBetween(lat1, lng1, lat2, lng2, results)
+        // distance in meter
+        return results[0]
     }
 
 

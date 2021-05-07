@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CriarNota">
+    tools:context=".Notas">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -61,48 +61,25 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_margin="10dp"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:backgroundTint="@color/teal_200"
+        android:onClick="CriarNota"
+        app:tint="@color/white"
+        app:srcCompat="@drawable/add_circle" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerNotas"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/AppBarLayout"
-        android:layout_centerHorizontal="true"
-        android:text="@string/Title"/>
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/tituloText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView3"
-        android:hint="@string/Title" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_margin="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tituloText"
-        android:layout_centerHorizontal="true"
-        android:text="@string/Info" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInfo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView10"
-        android:hint="@string/Info" />
-
-
-
-
-    <Button
-        android:id="@+id/btnCriar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
-        android:text="@string/Create" />
-
+        android:layout_marginTop="2dp"
+        tools:layout_editor_absoluteX="145dp"
+        tools:layout_editor_absoluteY="68dp"
+        tools:listitem="@layout/noteline" />
 </RelativeLayout>

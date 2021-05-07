@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SmartCity</string>
+    <string name="deleteNoteTitle">Nota apagada</string>
+    <string name="deleteNoteMessage">Deseja apagar a nota?</string>
+    <string name="editProblem">Por favor, preencha os campos</string>
+    <string name="confirmDialog">Sim</string>
+    <string name="cancelDialog">Cancelar</string>
+    <string name="updateNoteMessage">Deseja atualizar a nota?</string>
+    <string name="createProblem">Por favor, preencha os campos</string>
+    <string name="editEqual">A informação da nota é a mesma que anteriormente</string>
+    <string name="RememberMe">Guardar Dados</string>
+    <string name="LoginSuccess">Login efetuado com sucesso</string>
+    <string name="LoginFailure">Erro ao logar</string>
+    <string name="title_activity_maps">Mapa</string>
+    <string name="updateNoteTitle">Update Nota</string>
+    <string name="TitleListNotes">Notas</string>
+    <string name="CreateNote">Criar Nota</string>
+    <string name="Title">Título</string>
+    <string name="Info">Info</string>
+    <string name="Create">Criar</string>
+    <string name="Beginning">Início</string>
+    <string name="Home">Home</string>
+    <string name="UsernameLogin">username</string>
+    <string name="PwLogin">password</string>
+    <string name="Login">login</string>
+    <string name="Coordinates">"Coordenadas: "</string>
+    <string name="Edit">Editar</string>
+    <string name="Date">Data</string>
+    <string name="NoteDelete">Apagada</string>
+    <string name="Image">Escolha Imagem</string>
+    <string name="Save">Guardar</string>
+    <string name="reportProblem">Por favor, preencha os campos</string>
+</resources>
