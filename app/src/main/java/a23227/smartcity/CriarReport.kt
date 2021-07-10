@@ -40,6 +40,8 @@ class CriarReport : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_criar_report)
 
+        supportActionBar?.hide()
+
 
         title = findViewById(R.id.title)
         description = findViewById(R.id.description)

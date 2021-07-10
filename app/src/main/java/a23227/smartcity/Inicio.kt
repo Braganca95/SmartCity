@@ -13,6 +13,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.view.View
+import android.view.WindowManager
 import android.widget.EditText
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_inicio.*
@@ -25,6 +26,8 @@ class Inicio : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inicio)
+
+        supportActionBar?.hide()
 
         val sharedPref: SharedPreferences = getSharedPreferences(
             getString(R.string.preference_file_key), Context.MODE_PRIVATE)
@@ -64,7 +67,6 @@ class Inicio : AppCompatActivity() {
             val call = request.login(username, password);
                 call.enqueue(object : Callback<User> {
                     override fun onResponse(call: Call<User>, response: Response<User>) {
-                        Toast.makeText(this@Inicio, getString(R.string.deleteNoteMessage), Toast.LENGTH_LONG).show()
                         if (response.isSuccessful){
                             if(response.body()!!.status){
                                 with(sharedPref.edit()) {

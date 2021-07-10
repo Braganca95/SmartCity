@@ -28,6 +28,8 @@ class VisualizarNota : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_visualizar_nota)
 
+        supportActionBar?.hide()
+
         notasViewModel = ViewModelProvider(this).get(NotasViewModel::class.java)
 
         titulo = intent.getStringExtra(TITULO)

@@ -9,6 +9,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
+import androidx.appcompat.view.SupportActionModeWrapper
 import androidx.core.content.edit
 import kotlinx.android.synthetic.main.activity_inicio.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -20,7 +21,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         title = "";
 
-        setSupportActionBar(toolbar)
+        supportActionBar?.hide()
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

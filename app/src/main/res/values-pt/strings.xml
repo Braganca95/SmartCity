@@ -31,4 +31,8 @@
     <string name="Image">Escolha Imagem</string>
     <string name="Save">Guardar</string>
     <string name="reportProblem">Por favor, preencha os campos</string>
+    <string name="normal_map">Mapa Normal</string>
+    <string name="hybrid_map">Mapa Híbrido</string>
+    <string name="satellite_map">Mapa Satélite</string>
+    <string name="terrain_map">Mapa Terreno</string>
 </resources>
